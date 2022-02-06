@@ -42,10 +42,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update']))
         $password = $_POST['passwrd'];
         $email = $_POST['email'];
 
-        $insert_query = "UPDATE users
+        $update_query = "UPDATE users
                                 SET FirstName = '$firstname', LastName = '$lastname', UserName = '$username', Password = '$password', Email = '$email'
                                 WHERE ID = '$id'";
-        $send_query = mysqli_query($conn, $insert_query);
+        $send_query = mysqli_query($conn, $update_query);
 
         if ($send_query)
         {
